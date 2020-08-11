@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program3</StartupObject>
+    <StartupObject>ADO.NET.Program5</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program3.cs" />
-    <Compile Include="Program2.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Program5.cs" />
+    <Compile Include="FacturaActiveRecord.cs" />
+    <Compile Include="basico\Program4_ACTUALIZAR.cs" />
+    <Compile Include="basico\Program3_BORRAR.cs" />
+    <Compile Include="basico\Program2_INSERTAR.cs" />
+    <Compile Include="basico\Program_CONEXION.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

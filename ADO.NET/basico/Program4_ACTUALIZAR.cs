@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program3
+    class Program4_ACTUALIZAR
     {
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace ADO.NET
             SqlConnection conexion = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\formacion\Documents\Facturas.mdf;Integrated Security=True;Connect Timeout=30");
             conexion.Open();
 
-            string sql = "DELETE FROM Facturas WHERE NUMERO=3";
+            string sql = "UPDATE Facturas SET CONCEPTO='OTRA' WHERE NUMERO=3";
             SqlCommand comando = new SqlCommand(sql, conexion);
             comando.ExecuteNonQuery(); 
             Console.ReadLine();

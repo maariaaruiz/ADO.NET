@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program
+    class Program2_INSERTAR
     {
         static void Main(string[] args)
         {
@@ -15,15 +15,9 @@ namespace ADO.NET
             SqlConnection conexion = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\formacion\Documents\Facturas.mdf;Integrated Security=True;Connect Timeout=30");
             conexion.Open();
 
-            string sql = "select * from Facturas";
+            string sql = "insert into Facturas VALUES (3,'Otra')";
             SqlCommand comando = new SqlCommand(sql, conexion);
-            SqlDataReader lector= comando.ExecuteReader();
-
-            while(lector.Read())
-            {
-                Console.WriteLine(lector["NUMERO"].ToString());
-                Console.WriteLine(lector["CONCEPTO"].ToString());
-            }
+            comando.ExecuteNonQuery(); 
             Console.ReadLine();
         }
     }
