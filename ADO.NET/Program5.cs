@@ -13,6 +13,11 @@ namespace ADO.NET
         {
             FacturaActiveRecord f1 = new FacturaActiveRecord(4,"Televisor");
             f1.Insertar();
+            // CON PARAMTROS
+           //f1.Borrar(4);
+            // SIN PARAMTROS
+            f1.Borrar();
+          
         }
     }
 }
