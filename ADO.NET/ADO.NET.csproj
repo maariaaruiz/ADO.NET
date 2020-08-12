@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program6</StartupObject>
+    <StartupObject>ADO.NET.Program9</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FiltroFactura.cs" />
+    <Compile Include="Program9.cs" />
+    <Compile Include="Program8.cs" />
+    <Compile Include="Program7.cs" />
     <Compile Include="Program6.cs" />
     <Compile Include="Program5.cs" />
     <Compile Include="FacturaActiveRecord.cs" />

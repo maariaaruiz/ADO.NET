@@ -39,8 +39,10 @@ namespace ADO.NET
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
-                string sql = "insert into Facturas VALUES (" + NUMERO + ",'" + CONCEPTO + "')";
+                string sql = "insert into Facturas VALUES (@Numero,@Concepto)";
                 SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Numero", NUMERO);
+                comando.Parameters.AddWithValue("@Concepto", CONCEPTO);
                 comando.ExecuteNonQuery();
             };
 
@@ -62,8 +64,9 @@ namespace ADO.NET
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
-                string sql = "DELETE FROM Facturas WHERE NUMERO=" + NUMERO ;
+                string sql = "DELETE FROM Facturas WHERE NUMERO=@NUMERO";
                 SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@NUMERO", NUMERO);
                 comando.ExecuteNonQuery();
             };
 
@@ -85,6 +88,98 @@ namespace ADO.NET
             };
             return lista;
         }
+
+        public void Actualizar()
+        {
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "UPDATE Facturas SET CONCEPTO=@Numero WHERE NUMERO=@Concepto";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Numero", NUMERO);
+                comando.Parameters.AddWithValue("@Concepto", CONCEPTO);
+                comando.ExecuteNonQuery();
+            };
+          
+        }
+        //revisar este metodo, le falta alguna cosa pero funciona
+        public static FacturaActiveRecord BuscarUno(int num)
+        {
+            FacturaActiveRecord factura = null;
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "select * from Facturas WHERE NUMERO=@Numero";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Numero", num);
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    factura = new FacturaActiveRecord(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString());
+                }
+            };
+            return factura;
+        }
+
+        public static List<FacturaActiveRecord> BuscarPorConcepto(string concepto)
+        {
+            List<FacturaActiveRecord> facturas = new List<FacturaActiveRecord>();
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "select * from Facturas WHERE CONCEPTO=@Concepto";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Concepto", concepto);
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    facturas.Add(new FacturaActiveRecord(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString()));
+                }
+                return facturas;
+            };
+        }
+
+        public List<FacturaActiveRecord> BuscarTodos(FiltroFactura filtro)
+        {
+            List<FacturaActiveRecord> facturas = new List<FacturaActiveRecord>();
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "select * from Facturas";
+                if (filtro.Numero != 0)
+                {
+                    sql += " WHERE NUMERO=@Numero";
+                    if (filtro.Concepto != null)
+                    {
+                        sql += " AND CONCEPTO=@Concepto";
+                    }
+                }else
+                {
+                    if (filtro.Concepto != null)
+                    {
+                        sql += " WHERE CONCEPTO=@Concepto";
+                    }
+                }
+              
+
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Numero", NUMERO);
+                comando.Parameters.AddWithValue("@Concepto", CONCEPTO);
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    facturas.Add(new FacturaActiveRecord(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString()));
+                }
+                return facturas;
+            };
+
+        }
+
+
+
 
     }
 }
