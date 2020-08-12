@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program9</StartupObject>
+    <StartupObject>ADO.NET.Program12</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,13 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FiltroFactura.cs" />
-    <Compile Include="Program9.cs" />
-    <Compile Include="Program8.cs" />
-    <Compile Include="Program7.cs" />
-    <Compile Include="Program6.cs" />
-    <Compile Include="Program5.cs" />
-    <Compile Include="FacturaActiveRecord.cs" />
+    <Compile Include="FacturaLineaDTO.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\FiltroFactura.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\LineasFactura.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program12.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program11.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program10.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program9.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program8.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program7.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program6.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\Program5.cs" />
+    <Compile Include="Pruebas_Con_BBDD_Facturas\FacturaActiveRecord.cs" />
     <Compile Include="basico\Program4_ACTUALIZAR.cs" />
     <Compile Include="basico\Program3_BORRAR.cs" />
     <Compile Include="basico\Program2_INSERTAR.cs" />

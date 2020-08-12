@@ -141,8 +141,9 @@ namespace ADO.NET
             };
         }
 
-        public List<FacturaActiveRecord> BuscarTodos(FiltroFactura filtro)
+        public static List<FacturaActiveRecord> BuscarTodos(FiltroFactura filtro)
         {
+            SqlCommand comando = new SqlCommand();
             List<FacturaActiveRecord> facturas = new List<FacturaActiveRecord>();
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
@@ -151,22 +152,26 @@ namespace ADO.NET
                 if (filtro.Numero != 0)
                 {
                     sql += " WHERE NUMERO=@Numero";
+                    comando.Parameters.AddWithValue("@Numero", filtro.Numero);
                     if (filtro.Concepto != null)
                     {
                         sql += " AND CONCEPTO=@Concepto";
+                        comando.Parameters.AddWithValue("@Concepto", filtro.Concepto);
                     }
                 }else
                 {
                     if (filtro.Concepto != null)
                     {
                         sql += " WHERE CONCEPTO=@Concepto";
+                        comando.Parameters.AddWithValue("@Concepto", filtro.Concepto);
                     }
                 }
-              
 
-                SqlCommand comando = new SqlCommand(sql, conexion);
-                comando.Parameters.AddWithValue("@Numero", NUMERO);
-                comando.Parameters.AddWithValue("@Concepto", CONCEPTO);
+                comando.Connection = conexion;
+                comando.CommandText=sql;
+              
+              
+               
                 SqlDataReader lector = comando.ExecuteReader();
 
                 while (lector.Read())
@@ -175,7 +180,31 @@ namespace ADO.NET
                 }
                 return facturas;
             };
+        }
 
+        public  List<LineasFactura> BuscarLineasFactura()
+        {
+            List<LineasFactura> lineas = new List<LineasFactura>();
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "select * from LineasFactura WHERE FACTURAS_NUMERO=@Facturas_numero";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Facturas_numero", NUMERO);
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lineas.Add(new LineasFactura(
+                        Convert.ToInt32(lector["NUMERO"]),
+                        Convert.ToInt32(lector["FACTURAS_NUMERO"]),
+                        lector["PRODUCTOS_ID"].ToString(),
+                        Convert.ToInt32(lector["UNIDADES"])));
+                   }
+
+                return lineas;
+            };
+           
         }
 
 
