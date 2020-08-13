@@ -15,23 +15,24 @@ namespace ADO.NET
 
 
             //para borrar linea factura
-            LineasFactura_ActiveRecord f1 = new LineasFactura_ActiveRecord();
+           // LineasFactura_ActiveRecord f1 = new LineasFactura_ActiveRecord();
+            //f1.Borrar(1);
 
             //MIRAR
             //para INSERTAR linea factura
-            //LineasFactura_ActiveRecord lf1 = new LineasFactura_ActiveRecord(5,FacturaActiveRecord.BuscarUno(2),"1",4);
+            LineasFactura_ActiveRecord lf1 = new LineasFactura_ActiveRecord(5,FacturaActiveRecord.BuscarUno(2).NUMERO,"1",4);
             // lf1.Insertar();
 
 
 
-            //FacturaActiveRecord f = FacturaActiveRecord.BuscarUno(2);
+            FacturaActiveRecord f = FacturaActiveRecord.BuscarUno(2);
 
-            //List<LineaFactura> lista = f.BuscarLineasFactura();
-            //foreach (LineaFactura l in lista)
-            //{
-            //   Console.WriteLine( l.Numero+" "+l.Productos_id);
-            //}
-       
+            List<LineasFactura_ActiveRecord> lista = f.BuscarLineasFactura();
+            foreach (LineasFactura_ActiveRecord l in lista)
+            {
+                Console.WriteLine(l.Numero + " " + l.Productos_id);
+            }
+
 
 
             Console.ReadLine();
