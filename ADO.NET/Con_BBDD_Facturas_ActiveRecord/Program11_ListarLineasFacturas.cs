@@ -11,15 +11,15 @@ namespace ADO.NET
     class Program11_ListarLineasFacturas
     {
         static void Main(string[] args)
-        {//CAMBIAR A LINEASFACTURAS
+        {
 
 
             //para borrar linea factura
-         //   LineaFactura f1 = new LineaFactura();
-        
+            LineasFactura_ActiveRecord f1 = new LineasFactura_ActiveRecord();
 
+            //MIRAR
             //para INSERTAR linea factura
-            //  LineasFactura lf1= new LineasFactura(5,FacturaActiveRecord.BuscarUno(2),"1",4);
+            //LineasFactura_ActiveRecord lf1 = new LineasFactura_ActiveRecord(5,FacturaActiveRecord.BuscarUno(2),"1",4);
             // lf1.Insertar();
 
 
