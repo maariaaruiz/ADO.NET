@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ADO.NET.Dominio;
+
 using ADO.NET.Persistencia.Filtros;
+using Semicrol.Cursos.Dominio;
 
 namespace ADO.NET.Persistencia
 {

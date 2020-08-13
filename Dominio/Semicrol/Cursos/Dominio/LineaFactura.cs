@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Semicrol.Cursos.Dominio
 {
-    class LineaFactura
+   public class LineaFactura
     {
         public int Numero { get; set; }
         public int Facturas_num { get; set; }

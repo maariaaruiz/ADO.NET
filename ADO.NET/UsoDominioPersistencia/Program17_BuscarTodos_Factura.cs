@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ADO.NET.Persistencia;
-using ADO.NET.Dominio;
+using Semicrol.Cursos.Dominio;
 
 namespace ADO.NET
 {

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Semicrol.Cursos.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ADO.NET.Dominio;
+
 
 namespace ADO.NET.Persistencia
 {
