@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
+
 namespace ADO.NET
 {
     class FacturaActiveRecord
@@ -188,9 +189,9 @@ namespace ADO.NET
             };
         }
 
-        public  List<LineasFactura> BuscarLineasFactura()
+        public  List<LineasFactura_ActiveRecord> BuscarLineasFactura()
         {
-            List<LineasFactura> lineas = new List<LineasFactura>();
+            List<LineasFactura_ActiveRecord> lineas = new List<LineasFactura_ActiveRecord>();
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
@@ -201,7 +202,7 @@ namespace ADO.NET
 
                 while (lector.Read())
                 {
-                    lineas.Add(new LineasFactura(
+                    lineas.Add(new LineasFactura_ActiveRecord(
                         Convert.ToInt32(lector["NUMERO"]),
                         Convert.ToInt32(lector["FACTURAS_NUMERO"]),
                         lector["PRODUCTOS_ID"].ToString(),

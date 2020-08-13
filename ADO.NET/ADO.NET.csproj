@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Con_BBDD_Facturas_ActiveRecord\FacturaLineaDTO.cs" />
     <Compile Include="Con_BBDD_Facturas_ActiveRecord\FiltroFactura.cs" />
-    <Compile Include="Con_BBDD_Facturas_ActiveRecord\LineasFactura.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\LineasFactura_ActiveRecord.cs" />
     <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program13_UnidadesTotalesProductos.cs" />
     <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program12_UtilizarDTO_y_listar.cs" />
     <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program11_ListarLineasFacturas.cs" />
@@ -64,14 +64,17 @@
     <Compile Include="basico\Program3_BORRAR.cs" />
     <Compile Include="basico\Program2_INSERTAR.cs" />
     <Compile Include="basico\Program_CONEXION.cs" />
+    <Compile Include="Dominio\LineaFactura.cs" />
+    <Compile Include="Persistencia\IFacturaRepository.cs" />
     <Compile Include="Persistencia\FacturaRepository.cs" />
     <Compile Include="Dominio\Factura.cs" />
     <Compile Include="Persistencia\Filtros\FiltroFactura2.cs" />
-    <Compile Include="UsoDominioPersistencia\Program14_Insertar.cs" />
-    <Compile Include="UsoDominioPersistencia\Program18_BuscarTodosConFiltro.cs" />
-    <Compile Include="UsoDominioPersistencia\Program17_BuscarTodos.cs" />
-    <Compile Include="UsoDominioPersistencia\Program16_BuscarUno.cs" />
-    <Compile Include="UsoDominioPersistencia\Program15_Borrar.cs" />
+    <Compile Include="Persistencia\LineaFacturaRepository.cs" />
+    <Compile Include="UsoDominioPersistencia\Program14_Insertar_Factura.cs" />
+    <Compile Include="UsoDominioPersistencia\Program18_BuscarTodosConFiltro_Factura.cs" />
+    <Compile Include="UsoDominioPersistencia\Program17_BuscarTodos_Factura.cs" />
+    <Compile Include="UsoDominioPersistencia\Program16_BuscarUno_Factura.cs" />
+    <Compile Include="UsoDominioPersistencia\Program15_Borrar_Factura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

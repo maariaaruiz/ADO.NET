@@ -10,13 +10,14 @@ using ADO.NET.Persistencia.Filtros;
 
 namespace ADO.NET
 {
-    class Program18_BuscarTodosConFiltro
+    class Program18_BuscarTodosConFiltro_Factura
     {
         static void Main(string[] args)
         {
             FacturaRepository repositorio = new FacturaRepository();
-            FiltroFactura2 filtro = new FiltroFactura2();
-            filtro.AddConcepto ( "CompraA");
+            FiltroFactura2 filtro = new FiltroFactura2().AddConcepto("televsior").AddNumero(1);
+
+           
             List<Factura> facturas = repositorio.BuscarTodos(filtro);
 
             foreach (Factura f in facturas)

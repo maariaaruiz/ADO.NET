@@ -12,11 +12,6 @@ namespace ADO.NET.Persistencia.Filtros
         private int _numero;
         private string _concepto;
 
-        private FiltroFactura2()
-        {
-
-        }
-
         public int Numero
         {
             get { return _numero; } 
@@ -28,13 +23,16 @@ namespace ADO.NET.Persistencia.Filtros
 
         }
 
-        public void AddNumero(int numero)
+        //programacion fluida
+        public FiltroFactura2 AddNumero(int numero)
         {
             this._numero = Numero;
+            return this;
         }
-        public void AddConcepto(string concepto)
+        public FiltroFactura2 AddConcepto(string concepto)
         {
            this._concepto=Concepto;
+            return this;
         }
 
         

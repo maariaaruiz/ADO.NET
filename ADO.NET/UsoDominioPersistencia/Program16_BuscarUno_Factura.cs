@@ -9,12 +9,15 @@ using ADO.NET.Dominio;
 
 namespace ADO.NET
 {
-    class Program14_Borrar
+    class Program16_BuscarUno_Factura
     {
         static void Main(string[] args)
         {
             FacturaRepository repositorio = new FacturaRepository();
-            repositorio.Borrar(new Factura(20));
+            Factura factura = repositorio.BuscarUno(1);
+            Console.WriteLine(factura.CONCEPTO);
+           
+          
             Console.ReadLine();
         }
     }

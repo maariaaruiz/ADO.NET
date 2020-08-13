@@ -9,7 +9,7 @@ using ADO.NET.Dominio;
 
 namespace ADO.NET
 {
-    class Program17_BuscarTodos
+    class Program17_BuscarTodos_Factura
     {
         static void Main(string[] args)
         {

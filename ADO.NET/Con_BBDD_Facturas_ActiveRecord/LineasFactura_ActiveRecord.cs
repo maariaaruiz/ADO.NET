@@ -8,20 +8,19 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class LineasFactura
+    class LineasFactura_ActiveRecord
     {
         public int Numero { get; set; }
         public int Facturas_num { get; set; }
-        //public FacturaActiveRecord Facturas_num { get; set; }
         public string Productos_id { get; set; }
         public int Unidades { get; set; }
 
-        public LineasFactura()
+        public LineasFactura_ActiveRecord()
         {
 
         }
 
-        public LineasFactura(int numero, int facturas_num, string productos_id, int unidades)
+        public LineasFactura_ActiveRecord(int numero, int facturas_num, string productos_id, int unidades)
         {
             Numero = numero;
             Facturas_num = facturas_num;
@@ -58,8 +57,9 @@ namespace ADO.NET
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
-                string sql = "DELETE FROM LineasFactura WHERE NUMERO=" + num + "";
+                string sql = "DELETE FROM Facturas WHERE NUMERO=@NUMERO";
                 SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@NUMERO", num);
                 comando.ExecuteNonQuery();
             };
 

@@ -10,7 +10,7 @@ using ADO.NET.Persistencia.Filtros;
 
 namespace ADO.NET.Persistencia
 {
-    class FacturaRepository
+    class FacturaRepository:IFacturaRepository
     {
 
         private static string CadenaConexion()
@@ -51,7 +51,7 @@ namespace ADO.NET.Persistencia
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
-                string sql = "UPDATE Facturas SET CONCEPTO=@Numero WHERE NUMERO=@Concepto";
+                string sql = "UPDATE Facturas SET CONCEPTO=@Concepto WHERE NUMERO=@Numero";
                 SqlCommand comando = new SqlCommand(sql, conexion);
                 comando.Parameters.AddWithValue("@Numero", factura.NUMERO);
                 comando.Parameters.AddWithValue("@Concepto", factura.CONCEPTO);
@@ -139,6 +139,6 @@ namespace ADO.NET.Persistencia
             };
         }
 
-
+     
     }
 }
