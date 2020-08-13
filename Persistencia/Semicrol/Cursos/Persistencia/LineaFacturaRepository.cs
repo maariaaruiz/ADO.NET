@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ADO.NET.Persistencia
+namespace Semicrol.Cursos.Persistencia
 {
-    class LineaFacturaRepository
+   public class LineaFacturaRepository
     {
         private static string CadenaConexion()
         {

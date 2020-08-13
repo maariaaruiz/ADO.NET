@@ -33,7 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program18_BuscarTodosConFiltro</StartupObject>
+    <StartupObject>ADO.NET.Program18_BuscarTodosConFiltro_Factura</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,10 +68,6 @@
     <Compile Include="basico\Program3_BORRAR.cs" />
     <Compile Include="basico\Program2_INSERTAR.cs" />
     <Compile Include="basico\Program_CONEXION.cs" />
-    <Compile Include="Persistencia\IFacturaRepository.cs" />
-    <Compile Include="Persistencia\FacturaRepository.cs" />
-    <Compile Include="Persistencia\Filtros\FiltroFactura2.cs" />
-    <Compile Include="Persistencia\LineaFacturaRepository.cs" />
     <Compile Include="UsoDominioPersistencia\Program14_Insertar_Factura.cs" />
     <Compile Include="UsoDominioPersistencia\Program18_BuscarTodosConFiltro_Factura.cs" />
     <Compile Include="UsoDominioPersistencia\Program17_BuscarTodos_Factura.cs" />
@@ -80,8 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
-      <Project>{df705db3-0567-4976-8d2f-1ef390ae614c}</Project>
+      <Project>{f1313a99-dce1-4c04-92aa-b0860d67a90f}</Project>
       <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{5fcea3cc-00f9-40e9-a9fc-87cc1fb6db34}</Project>
+      <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

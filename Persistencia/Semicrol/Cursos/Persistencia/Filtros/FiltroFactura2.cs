@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADO.NET.Persistencia.Filtros
+namespace Semicrol.Cursos.Persistencia.Filtros
 {
-    class FiltroFactura2
+    public class FiltroFactura2
     {
  
         private int _numero;

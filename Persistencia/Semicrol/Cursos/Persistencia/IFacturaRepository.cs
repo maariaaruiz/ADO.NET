@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ADO.NET.Persistencia.Filtros;
+using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
 
-namespace ADO.NET.Persistencia
+namespace Semicrol.Cursos.Persistencia
 {
-    interface IFacturaRepository
+    public interface IFacturaRepository
     {
         void Insertar(Factura factura);
         void Borrar(Factura factura);

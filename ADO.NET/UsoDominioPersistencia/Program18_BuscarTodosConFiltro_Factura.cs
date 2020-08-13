@@ -4,9 +4,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ADO.NET.Persistencia;
 
-using ADO.NET.Persistencia.Filtros;
+
+using Semicrol.Cursos.Persistencia;
+using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
 
 namespace ADO.NET

@@ -5,13 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using ADO.NET.Persistencia.Filtros;
+using Semicrol.Cursos.Persistencia;
+using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
 
-namespace ADO.NET.Persistencia
+namespace Semicrol.Cursos.Persistencia
 {
-    class FacturaRepository:IFacturaRepository
+    public class FacturaRepository:IFacturaRepository
     {
 
         private static string CadenaConexion()
@@ -61,7 +61,7 @@ namespace ADO.NET.Persistencia
 
         }
 
-        public List<Factura> BuscarTodos()
+       public List<Factura> BuscarTodos()
         {
             List<Factura> lista = new List<Factura>();
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
@@ -78,7 +78,7 @@ namespace ADO.NET.Persistencia
             return lista;
         }
 
-        public Factura BuscarUno(int num)
+       public Factura BuscarUno(int num)
         {
             Factura factura = null;
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
@@ -101,7 +101,7 @@ namespace ADO.NET.Persistencia
             };  
         }
 
-        public List<Factura> BuscarTodos(FiltroFactura2 filtro)
+       public List<Factura> BuscarTodos(FiltroFactura2 filtro)
         {
             SqlCommand comando = new SqlCommand();
             List<Factura> facturas = new List<Factura>();
@@ -140,6 +140,19 @@ namespace ADO.NET.Persistencia
             };
         }
 
-     
+        List<Factura> IFacturaRepository.BuscarTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Factura> IFacturaRepository.BuscarTodos(FiltroFactura2 filtro)
+        {
+            throw new NotImplementedException();
+        }
+
+        Factura IFacturaRepository.BuscarUno(int num)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
