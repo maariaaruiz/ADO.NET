@@ -9,9 +9,10 @@ using Semicrol.Cursos.Persistencia;
 using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
 
-namespace Semicrol.Cursos.Persistencia
+
+namespace Semicrol.Cursos.PersistenciaADO
 {
-    public class FacturaRepository:IFacturaRepository
+    public class FacturaRepository: IFacturaRepository
     {
 
         private static string CadenaConexion()
@@ -141,11 +142,6 @@ namespace Semicrol.Cursos.Persistencia
         }
 
         List<Factura> IFacturaRepository.BuscarTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Factura> IFacturaRepository.BuscarTodos(FiltroFactura2 filtro)
         {
             throw new NotImplementedException();
         }

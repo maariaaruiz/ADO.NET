@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Semicrol.Cursos.Persistencia.Filtros;
-using Semicrol.Cursos.Dominio;
 
-namespace Semicrol.Cursos.Persistencia
+using Semicrol.Cursos.Dominio;
+using Semicrol.Cursos.Persistencia.Filtros;
+
+namespace Semicrol.Cursos.PersistenciaADO
 {
     public interface IFacturaRepository
     {

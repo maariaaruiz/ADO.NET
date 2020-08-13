@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Semicrol.Cursos.Persistencia
+namespace Semicrol.Cursos.PersistenciaADO
 {
    public class LineaFacturaRepository
     {
