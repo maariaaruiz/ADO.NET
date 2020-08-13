@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program13_UnidadesTotalesProductos</StartupObject>
+    <StartupObject>ADO.NET.Program18_BuscarTodosConFiltro</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,23 +47,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pruebas_Con_BBDD_Facturas\FacturaLineaDTO.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\FiltroFactura.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\LineasFactura.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program13_UnidadesTotalesProductos.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program12_UtilizarDTO_y_listar.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program11_ListarLineasFacturas.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program10_Filtrar_ListarTodasFacturas.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program9_Listar_y_BuscarPorConcepto.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program8_Buscar_y_actualizar.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program7_Buscar_Una_Factura_Concreta.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program6_ListarTodasFacturas.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\Program5_insertar_borrar.cs" />
-    <Compile Include="Pruebas_Con_BBDD_Facturas\FacturaActiveRecord.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\FacturaLineaDTO.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\FiltroFactura.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\LineasFactura.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program13_UnidadesTotalesProductos.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program12_UtilizarDTO_y_listar.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program11_ListarLineasFacturas.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program10_Filtrar_ListarTodasFacturas.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program9_Listar_y_BuscarPorConcepto.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program8_Buscar_y_actualizar.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program7_Buscar_Una_Factura_Concreta.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program6_ListarTodasFacturas.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\Program5_insertar_borrar.cs" />
+    <Compile Include="Con_BBDD_Facturas_ActiveRecord\FacturaActiveRecord.cs" />
     <Compile Include="basico\Program4_ACTUALIZAR.cs" />
     <Compile Include="basico\Program3_BORRAR.cs" />
     <Compile Include="basico\Program2_INSERTAR.cs" />
     <Compile Include="basico\Program_CONEXION.cs" />
+    <Compile Include="Persistencia\FacturaRepository.cs" />
+    <Compile Include="Dominio\Factura.cs" />
+    <Compile Include="Persistencia\Filtros\FiltroFactura2.cs" />
+    <Compile Include="UsoDominioPersistencia\Program14_Insertar.cs" />
+    <Compile Include="UsoDominioPersistencia\Program18_BuscarTodosConFiltro.cs" />
+    <Compile Include="UsoDominioPersistencia\Program17_BuscarTodos.cs" />
+    <Compile Include="UsoDominioPersistencia\Program16_BuscarUno.cs" />
+    <Compile Include="UsoDominioPersistencia\Program15_Borrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

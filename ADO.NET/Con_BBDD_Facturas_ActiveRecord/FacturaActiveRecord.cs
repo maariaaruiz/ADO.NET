@@ -102,7 +102,7 @@ namespace ADO.NET
             };
           
         }
-        //revisar este metodo, le falta alguna cosa pero funciona
+
         public static FacturaActiveRecord BuscarUno(int num)
         {
             FacturaActiveRecord factura = null;
@@ -114,12 +114,17 @@ namespace ADO.NET
                 comando.Parameters.AddWithValue("@Numero", num);
                 SqlDataReader lector = comando.ExecuteReader();
 
-                while (lector.Read())
+                if (lector.Read())
                 {
                     factura = new FacturaActiveRecord(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString());
+                    return factura;
+                }
+                else
+                {
+                    return null;
                 }
             };
-            return factura;
+          
         }
 
         public static List<FacturaActiveRecord> BuscarPorConcepto(string concepto)
@@ -141,6 +146,7 @@ namespace ADO.NET
             };
         }
 
+        //buscar todos con filtro
         public static List<FacturaActiveRecord> BuscarTodos(FiltroFactura filtro)
         {
             SqlCommand comando = new SqlCommand();
@@ -230,7 +236,7 @@ namespace ADO.NET
         }
         //devuelve las unidades totales
         public static void UnidadesTotales()
-        {
+        {//puede ser static int y poner el console en el main
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
             {
                 int unidades=0;
