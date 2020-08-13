@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program12
+    class Program9_Listar_y_BuscarPorConcepto
     {
         static void Main(string[] args)
         {
-
-            List<FacturaLineaDTO> lista = FacturaLineaDTO.BuscarFacturasLineas();
-            foreach (FacturaLineaDTO l in lista)
+            List<FacturaActiveRecord> lista = FacturaActiveRecord.BuscarPorConcepto("Cosa");
+            foreach(FacturaActiveRecord f in lista)
             {
-               Console.WriteLine( l.NumeroFactura+" "+l.ConceptoFactura+" "+l.Producto_id+" "+l.Unidades);
+                Console.WriteLine(f.NUMERO + " " + f.CONCEPTO);
             }
-       
-
-
+           
+           
             Console.ReadLine();
         }
     }

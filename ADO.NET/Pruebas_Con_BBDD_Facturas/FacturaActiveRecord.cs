@@ -207,7 +207,41 @@ namespace ADO.NET
            
         }
 
+        //utilizmos clase DTO
+        public List<FacturaLineaDTO> BuscarFacturasLineas()
+        {
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                List<FacturaLineaDTO> facturaslineas = new List<FacturaLineaDTO>();
+                conexion.Open();
+                string sql = "select Facturas.NUMERO,Facturas.CONCEPTO, " +
+                    "LineasFactura.PRODUCTOS_ID,LineasFactura.UNIDADES FROM " +
+                    "Facturas,LineasFactura WHERE Facturas.NUMERO=LineasFactura.FACTURAS_NUMERO";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                SqlDataReader lector = comando.ExecuteReader();
 
+                while (lector.Read())
+                {
+                    facturaslineas.Add(new FacturaLineaDTO(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString(), lector["PRODUCTOS_ID"].ToString(), Convert.ToInt32(lector["UNIDADES"])));
+                }
+                return facturaslineas;
+            }
+
+        }
+        //devuelve las unidades totales
+        public static void UnidadesTotales()
+        {
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                int unidades=0;
+                conexion.Open();
+                string sql = "SELECT SUM(UNIDADES) AS TOTAL_UNIDADES FROM LineasFactura ";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                unidades = Convert.ToInt32(comando.ExecuteScalar());
+              
+                Console.WriteLine("Hay "+ unidades + " unidades");
+            };
+        }
 
 
     }

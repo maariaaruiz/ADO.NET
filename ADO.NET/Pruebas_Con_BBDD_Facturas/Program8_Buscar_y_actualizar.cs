@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program8
+    class Program8_Buscar_y_actualizar
     {
         static void Main(string[] args)
         {

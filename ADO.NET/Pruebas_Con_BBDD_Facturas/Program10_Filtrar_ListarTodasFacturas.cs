@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program9
+    class Program10_Filtrar_ListarTodasFacturas
     {
         static void Main(string[] args)
         {
-            List<FacturaActiveRecord> lista = FacturaActiveRecord.BuscarPorConcepto("Cosa");
+            FiltroFactura f1 = new FiltroFactura();
+            List<FacturaActiveRecord> lista = FacturaActiveRecord.BuscarTodos(f1);
             foreach(FacturaActiveRecord f in lista)
             {
                 Console.WriteLine(f.NUMERO + " " + f.CONCEPTO);

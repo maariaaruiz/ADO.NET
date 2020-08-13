@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program7
+    class Program7_Buscar_Una_Factura_Concreta
     {
         static void Main(string[] args)
         {

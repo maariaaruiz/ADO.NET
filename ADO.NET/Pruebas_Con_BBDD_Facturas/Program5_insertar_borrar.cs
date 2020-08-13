@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program5
+    class Program5_insertar_borrar
     {
         static void Main(string[] args)
         {

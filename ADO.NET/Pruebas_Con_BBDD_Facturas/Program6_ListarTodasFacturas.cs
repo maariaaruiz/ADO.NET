@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class Program6
+    class Program6_ListarTodasFacturas
     {
         static void Main(string[] args)
         {
