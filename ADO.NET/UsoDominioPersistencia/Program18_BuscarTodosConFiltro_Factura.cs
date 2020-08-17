@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Semicrol.Cursos.Persistencia;
 using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
+using Semicrol.Cursos.PersistenciaADO;
 
 namespace ADO.NET
 {
