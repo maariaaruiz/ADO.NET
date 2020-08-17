@@ -18,6 +18,6 @@ namespace Semicrol.Cursos.Persistencia
         List<Factura> BuscarTodos();
         List<Factura> BuscarTodos(FiltroFactura2 filtro);
         Factura BuscarUno(int num);
-        void BuscarTodosConLineas();
+        List<Factura> BuscarTodosConLineas();
     }
 }
