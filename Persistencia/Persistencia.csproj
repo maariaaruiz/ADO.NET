@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Semicrol\Cursos\Persistencia\Filtros\FiltroFactura2.cs" />
     <Compile Include="Semicrol\Cursos\Persistencia\IFacturaRepository.cs" />
+    <Compile Include="Semicrol\Cursos\Persistencia\ILineaFacturaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

@@ -6,11 +6,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Semicrol.Cursos.Persistencia;
 
 namespace Semicrol.Cursos.PersistenciaADO
 {
-   public class LineaFacturaRepository
+   public class LineaFacturaRepository:ILineaFacturaRepository
     {
         private static string CadenaConexion()
         {

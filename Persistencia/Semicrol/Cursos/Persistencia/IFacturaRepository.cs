@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Semicrol.Cursos.Dominio;
 using Semicrol.Cursos.Persistencia.Filtros;
 
-namespace Semicrol.Cursos.PersistenciaADO
+namespace Semicrol.Cursos.Persistencia
 {
     public interface IFacturaRepository
     {
@@ -18,5 +18,6 @@ namespace Semicrol.Cursos.PersistenciaADO
         List<Factura> BuscarTodos();
         List<Factura> BuscarTodos(FiltroFactura2 filtro);
         Factura BuscarUno(int num);
+        void BuscarTodosConLineas();
     }
 }

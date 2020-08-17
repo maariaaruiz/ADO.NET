@@ -9,20 +9,25 @@ namespace Semicrol.Cursos.Dominio
    public class LineaFactura
     {
         public int Numero { get; set; }
-        public int Facturas_num { get; set; }
         public string Productos_id { get; set; }
         public int Unidades { get; set; }
+        public Factura factura { get; set; }
    
-    public LineaFactura(int numero, int facturas_num, string productos_id, int unidades)
-    {
-        Numero = numero;
-        Facturas_num = facturas_num;
-        Productos_id = productos_id;
-        Unidades = unidades;
-    }
 
         public LineaFactura()
         {
+        }
+
+        public override bool Equals(object obj)
+        {
+            var factura = obj as LineaFactura;
+            return factura != null &&
+                   Numero == factura.Numero;
+        }
+
+        public override int GetHashCode()
+        {
+            return -1449941195 + Numero.GetHashCode();
         }
     }
 }

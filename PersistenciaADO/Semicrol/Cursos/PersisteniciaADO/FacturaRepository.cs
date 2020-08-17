@@ -140,6 +140,28 @@ namespace Semicrol.Cursos.PersistenciaADO
                 return facturas;
             };
         }
+        //Se pueden devolver 3 cosas:
+        //lista de objetos- siempre lo mejor (devolver una Nota,Factura,..., en vez de un tipo de dato(string, int , double,..))
+        //grafo - a partir de inner join
+        //DTO ventajas(hechoss a medida) desventajas(mas clases, mas mantenimiento)
+        public void BuscarTodosConLineas()
+        {
+            List<Factura> lista = new List<Factura>();
+            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                string sql = "select * from Facturas" +
+                    "inner join LineasFactura on Facturas.NUMERO=LineasFactura.FACTURAS_NUMERO";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                SqlDataReader lector = comando.ExecuteReader();
+                while (lector.Read())
+                {
+                    lista.Add(new Factura(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString()));
+                }
+            };
+            return lista;
+
+        }
 
         List<Factura> IFacturaRepository.BuscarTodos()
         {

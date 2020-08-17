@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program18_BuscarTodosConFiltro_Factura</StartupObject>
+    <StartupObject>ADO.NET.Program17_BuscarTodos_Factura</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
