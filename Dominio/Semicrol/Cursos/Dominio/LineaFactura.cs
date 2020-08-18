@@ -14,8 +14,14 @@ namespace Semicrol.Cursos.Dominio
         public Factura factura { get; set; }
    
 
-        public LineaFactura()
+        //public LineaFactura()
+        //{
+        //}
+
+        public LineaFactura(int numero, Factura factura)
         {
+            Numero = numero;
+            this.factura = factura;
         }
 
         public override bool Equals(object obj)

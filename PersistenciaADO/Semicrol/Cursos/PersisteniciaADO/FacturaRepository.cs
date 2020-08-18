@@ -61,8 +61,8 @@ namespace Semicrol.Cursos.PersistenciaADO
             };
 
         }
-
-       public List<Factura> BuscarTodos()
+   
+        public List<Factura> BuscarTodos()
         {
             List<Factura> lista = new List<Factura>();
             using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
@@ -140,44 +140,63 @@ namespace Semicrol.Cursos.PersistenciaADO
                 return facturas;
             };
         }
+
         //Se pueden devolver 3 cosas:
         //lista de objetos- siempre lo mejor (devolver una Nota,Factura,..., en vez de un tipo de dato(string, int , double,..))
         //grafo - a partir de inner join
         //DTO ventajas(hechoss a medida) desventajas(mas clases, mas mantenimiento)
         public List<Factura> BuscarTodosConLineas()
         {
-            List<Factura> lista = new List<Factura>();
-            using (SqlConnection conexion = new SqlConnection(CadenaConexion()))
+
+            using (SqlConnection conexion =
+          new SqlConnection(CadenaConexion()))
             {
                 conexion.Open();
-                string sql = "select Facturas.NUMERO AS Facturas_Numero," +
-                    "Facturas.CONCEPTO," +
-                    "LineasFactura.NUMERO AS LineaNumero,UNIDADES,PRODUCTOS_ID from Facturas" +
-                    "inner join LineasFactura on Facturas.NUMERO=LineasFactura.FACTURAS_NUMERO";
+                String sql = "select Facturas.NUMERO as facturaNumero," +
+                             "Facturas.CONCEPTO," +
+                             " LineasFactura.NUMERO as lineaNumero," +
+                             "UNIDADES,PRODUCTOS_ID" +
+                             " from Facturas inner join LineasFactura " +
+                             "on Facturas.NUMERO = LineasFactura.FACTURAS_NUMERO";
+
                 SqlCommand comando = new SqlCommand(sql, conexion);
                 SqlDataReader lector = comando.ExecuteReader();
-                List<Factura> factura = new List<Factura>();
+                List<Factura> listaFacturas = new List<Factura>();
+
                 while (lector.Read())
                 {
-                   Factura f =new Factura(Convert.ToInt32(lector["NUMERO"]), lector["CONCEPTO"].ToString());
-                    LineaFactura linea = new LineaFactura();
-                    linea.factura = f;
-                    linea.Unidades = Convert.ToInt32(lector["UNIDADES"]);
-                    linea.Productos_id = lector["PRODUCTOS_ID"].ToString();
+                    Factura f = new Factura(Convert.ToInt32(lector["facturaNumero"]));
+                    if (!listaFacturas.Contains(f))
+                    {
+
+                        f.CONCEPTO = lector["concepto"].ToString();
+                        listaFacturas.Add(f);
+                    }
+                    else
+                    {
+
+                        f = listaFacturas
+                            .Find((facturita) => facturita.NUMERO == Convert.ToInt32(lector["facturaNumero"]));
+                    }
+
+                    LineaFactura linea = new LineaFactura(Convert.ToInt32(lector["lineaNumero"]),f);
+                    linea.Unidades = Convert.ToInt32(lector["unidades"]);
+                    linea.Productos_id = lector["productos_id"].ToString();
+                    f.AddLinea(linea);
+
                 }
-            };
-            return lista;
+
+                return listaFacturas;
+            }
 
         }
 
-        List<Factura> IFacturaRepository.BuscarTodos()
-        {
-            throw new NotImplementedException();
-        }
+     
 
         Factura IFacturaRepository.BuscarUno(int num)
         {
             throw new NotImplementedException();
         }
+
     }
 }

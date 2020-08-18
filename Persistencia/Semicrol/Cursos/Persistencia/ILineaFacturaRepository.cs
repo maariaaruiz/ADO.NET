@@ -12,8 +12,8 @@ namespace Semicrol.Cursos.Persistencia
         void Insertar(LineaFactura linea);
         void Borrar(LineaFactura linea);
         void Actualizar(LineaFactura linea);
-        List<LineaFactura> BuscarTodos();
-        LineaFactura BuscarUno(int num);
+        List<LineaFactura> BuscarTodasLineas();
+        LineaFactura BuscarUnaLinea(int num);
 
     }
 }

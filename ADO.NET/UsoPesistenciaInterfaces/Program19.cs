@@ -4,26 +4,34 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 using Semicrol.Cursos.Persistencia;
+using Semicrol.Cursos.Persistencia.Filtros;
 using Semicrol.Cursos.Dominio;
 using Semicrol.Cursos.PersistenciaADO;
 
 namespace ADO.NET
 {
-    class Program17_BuscarTodos_Factura
+    class Program19
     {
         static void Main(string[] args)
         {
-            FacturaRepository repositorio = new FacturaRepository();
-       /*     List<Factura> facturas = repositorio.BuscarTodos();
+            IFacturaRepository repositorio = new FacturaRepository();
 
-            foreach (Factura f in facturas)
+            List<Factura> lista = repositorio.BuscarTodosConLineas();
+
+            foreach (Factura f in lista)
             {
                 Console.WriteLine(f.CONCEPTO);
+                foreach (LineaFactura lf in  f.lineas)
+                {
+                    Console.WriteLine(lf.Unidades);
+                }
             }
          
            
-          */
+          
             Console.ReadLine();
         }
     }
