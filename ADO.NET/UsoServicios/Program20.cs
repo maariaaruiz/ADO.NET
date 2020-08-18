@@ -33,7 +33,8 @@ namespace ADO.NET
                     Console.WriteLine(lf.Unidades);
                 }*/
             }
-         
+            //borrar factura
+           // servicio.BorrarFactura(repositorio.BuscarUno(2));
            
           
             Console.ReadLine();
