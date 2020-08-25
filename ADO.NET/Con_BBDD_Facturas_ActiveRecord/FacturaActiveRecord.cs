@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace ADO.NET
 {
-    class FacturaActiveRecord
+    class FacturaActiveRecord //la carpeta donde se encuentra se deberia llamar ActiveRecord
+
     {
         public FacturaActiveRecord(int nUMERO, string cONCEPTO)
         {

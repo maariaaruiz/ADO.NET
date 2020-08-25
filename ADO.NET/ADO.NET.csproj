@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ADO.NET.Program18_BuscarTodosConFiltro_Factura</StartupObject>
+    <StartupObject>ADO.NET.Program7_Buscar_Una_Factura_Concreta</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -82,6 +82,10 @@
     <ProjectReference Include="..\Dominio\Dominio.csproj">
       <Project>{f1313a99-dce1-4c04-92aa-b0860d67a90f}</Project>
       <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersistenciaADO\PersistenciaADO.csproj">
+      <Project>{1a046ec2-e68a-4732-a72d-a8b96952fd4c}</Project>
+      <Name>PersistenciaADO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">
       <Project>{5fcea3cc-00f9-40e9-a9fc-87cc1fb6db34}</Project>
