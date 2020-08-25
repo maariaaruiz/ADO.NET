@@ -9,7 +9,7 @@ using Semicrol.Cursos.Dominio;
 using Semicrol.Cursos.Persistencia.Filtros;
 
 namespace Semicrol.Cursos.Persistencia
-{
+{//OPERACIONES A LA BBDD
     public interface IFacturaRepository
     {//implementa los metodos del repositorio
         void Insertar(Factura factura);

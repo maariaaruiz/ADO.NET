@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Semicrol.Cursos.Dominio
-{
+{//ENTIDADES
     public class Factura
     {
         public int NUMERO { get; set; }
